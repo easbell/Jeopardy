@@ -13,13 +13,11 @@ describe('domUpdates', function() {
 
     expect(domUpdates.toggleSplash).to.be.called(1);
   });
-
   it('should display player\'s names upon start of game', function() {
     domUpdates.displayPlayers(['a', 'b', 'b']);
 
     expect(domUpdates.displayPlayers).to.be.called(1);
   })
-  
   it('should disable the reset game button', function() {
     domUpdates.disableReset();
 
