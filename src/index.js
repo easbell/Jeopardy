@@ -7,9 +7,6 @@ import $ from 'jquery';
 import './css/base.css';
 import Game from './Game.js';
 import domUpdates from './domUpdates.js';
-import Round from './Round.js';
-import Clue from './Clue.js';
-import DailyDouble from './DailyDouble.js';
 
 //  Tell webpack to use an image (link to it in index.html)
 let game = new Game();
@@ -51,6 +48,9 @@ $('.game--board').on('click', (event) => {
 
 $('body').on('click', '.submit--wager', () => {
   let playWager = $('.submit--wager').prev().val();
+  if (playWager === '') {
+    playWager = 0
+  }
   game.currentClue.wagerScore(playWager);
 });
 
@@ -59,7 +59,6 @@ $('body').on('click', '.submit--guess', () => {
   game.submitGuess(playInput);
   game.counter++;
   game.initiateRound();
-  console.log(game.players)
 });
 
 $('body').on('click', '.submit--wager--round--three', () => {

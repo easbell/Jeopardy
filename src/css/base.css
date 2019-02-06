@@ -7,15 +7,47 @@ body {
   box-sizing: border-box;
 }
 
+a {
+  color: #FFF;
+}
+
 .popup--container {
   z-index: 2;
   position: absolute;
+  left: 30%;
+  width: 40%;
+  top: 25%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.splash--container input,
+.popup--container input,
+.round--three--wager input {
+  margin-bottom: 25px;
   margin-left: auto;
   margin-right: auto;
-  left: 0;
-  right: 0;
-  width: 60%;
-  top: 30%; 
+  font-size: 14px;
+  padding: 5px;
+  width: 400px;
+}
+
+.popup--container h2 {
+  text-align: center;
+  font-size: 30px;
+}
+
+.popup--container h5 {
+  text-align: center;
+  font-size: 24px;
+  margin-top: 0;
+  margin-bottom: 28px;
+}
+
+.popup--container button {
+  margin: auto;
+  margin-top: 10px;
 }
 
 .hide--container {
@@ -24,11 +56,11 @@ body {
 
 .game--container {
   display: grid;
-  grid-template-rows: .25fr .65fr 2.5fr .75fr;
+  grid-template-rows: .25fr .65fr 2.5fr .85fr;
 }
 
 .game--inactive {
-  opacity: .2;
+  opacity: .12;
   pointer-events: none;
 }
 
@@ -43,6 +75,14 @@ h1 {
   font-size: 80px;
   margin: 0;
   margin-bottom: 15px;
+  text-align: center;
+}
+
+.splash--container h2 {
+  color: #e7d058;
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 10px;
 }
 
 button {
@@ -54,6 +94,10 @@ button {
   font-size: 16px;
   font-weight: 500;
   font-family: Raleway;
+}
+
+button:hover {
+  background-color: #218077;
 }
 
 .category--header {
@@ -86,6 +130,10 @@ button {
   justify-content: center;
 }
 
+.game--board h4:hover {
+  background-color: #17625b;
+}
+
 .category--header {
   border-radius: 10px;
   display: grid;
@@ -97,13 +145,19 @@ button {
 
 .player--container {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: flex-end;
+}
+
+.name,
+.score {
+  margin: 22px;
+  font-size: 18px;
 }
 
 .player--container div {
   background-color: #49a89d;
-  width: 30%;
+  width: 26%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -115,4 +169,25 @@ button {
   background-color:  #49a89d;
   color: #49a89d;
   pointer-events: none;
+}
+
+.round--three--wager,
+.round--three {
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+  margin: auto;
+  margin-top: 0;
+}
+
+.round--three--wager input,
+.round--three input {
+  margin-bottom: 25px;
+  font-size: 14px;
+  padding: 5px;
+  width: 400px;
+}
+
+.round--three h1 {
+  text-align: center;
 }
