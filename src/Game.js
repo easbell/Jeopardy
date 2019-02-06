@@ -102,11 +102,12 @@ class Game {
     }
   }
 
-
-
-  // determineWinner() {
-
-  // }
+  determineWinner() {
+    let winner = this.players.reduce((prev, current) => {
+      return (prev.score > current.score) ? prev : current
+    })
+    domUpdates.displayWinner(winner);
+  }
 
 }
 

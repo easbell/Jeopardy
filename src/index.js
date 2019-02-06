@@ -59,6 +59,7 @@ $('body').on('click', '.submit--guess', () => {
   game.submitGuess(playInput);
   game.counter++;
   game.initiateRound();
+  console.log(game.players)
 });
 
 $('body').on('click', '.submit--wager--round--three', () => {
@@ -73,4 +74,5 @@ $('body').on('click', '.submit--answer--round--three', () => {
   let playerTwoAnswer = $('.answer--player--two').val();
   let playerThreeAnswer = $('.answer--player--three').val();
   game.currentClue.roundThreeAnswer(game, [playerOneAnswer, playerTwoAnswer, playerThreeAnswer])
+  game.determineWinner();
 });

@@ -125,6 +125,12 @@ const domUpdates = {
       <input type="text" placeholder="Answer" class="answer--player--three">
       <button class="submit--answer--round--three">Submit All Answers</button>
     </div>`);
+  },
+
+  displayWinner: (winner) => {
+    $('.round--three').replaceWith(`
+      <h1>Congratulations! ${winner.name}, you're the winner!</h1>
+    `)
   }
   
 }
