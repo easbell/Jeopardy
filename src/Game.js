@@ -7,6 +7,7 @@ import DailyDouble from "./DailyDouble.js"
 
 class Game {
   constructor() {
+    this.currentRound = null;
     this.players = [];
     this.currentPlayer = null;
     this.winner = null;
@@ -78,12 +79,19 @@ class Game {
     this.switchPlayer(this.currentPlayer);
   }
 
+  // submitThirdRound(inputs) {
+  //   console.log(this.currentClue)
+  //   this.currentClue.roundThreeAnswer(this, inputs);
+  // }
+
   initiateRound() {
     if (this.counter === 0) {
       let round = new Round(1)
+      this.currentRound = round;
       round.gatherClues(this.roundOne, this);
     } else if (this.counter === 16) {
       let round = new Round(2);
+      this.currentRound = round;
       round.gatherClues(this.roundTwo, this);
       domUpdates.setClues(round.cluesRoundTwo);
       domUpdates.displayCategories(this.roundTwo);
@@ -91,9 +99,9 @@ class Game {
       domUpdates.displayRound(2);
     } else if (this.counter === 32) {
       let round = new Round(3);
-      // round.gatherClues(this.roundThree, this);
-      // domUpdates.setClues(round.cluesRoundThree);
-      // domUpdates.displayCategories(this.roundThree);
+      this.currentRound = round;
+      round.gatherClues(this.roundThree, this);
+      this.currentClue = new Clue(round.cluesRoundThree[0].question, round.cluesRoundThree[0].pointValue, round.cluesRoundThree[0].answer, round.cluesRoundThree[0].categoryId);
       domUpdates.displayRound(3);
       domUpdates.displayRoundThreeWager(this.roundThree[0])
     }

@@ -7,6 +7,7 @@ class Player {
   }
 
   changeScore(points, game) {
+    console.log('in player')
     this.score += points;
     domUpdates.displayPlayerScore(game.currentPlayer, game)
   }
