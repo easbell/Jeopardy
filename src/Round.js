@@ -4,7 +4,7 @@ import domUpdates from './domUpdates.js';
 
 class Round {
   constructor(currentRound, categories) {
-    this.currentRound = currentRound || 1;
+    this.currentRound = currentRound;
     this.categories = categories;
     this.cluesRoundOne = null;
     this.cluesRoundTwo = null;
@@ -27,7 +27,7 @@ class Round {
     });
     this.cluesRoundOne = game.allCluesInPlay.slice(0, 16);
     this.cluesRoundTwo = game.allCluesInPlay.slice(16, 32);
-    this.cluesRoundThree = game.allCluesInPlay.slice(35);
+    this.cluesRoundThree = game.allCluesInPlay.slice(35);   
     this.setDailyDouble();
     domUpdates.setClues(this.cluesRoundOne);
   }
@@ -49,6 +49,12 @@ class Round {
       this.cluesRoundTwo[randomIndexTwo].dailyDouble = true;
     }
   }
+
+  roundThreeWagers(a, b, c) {
+    domUpdates.displayRoundThreeClue(this.cluesRoundThree[0].question);
+  }
+
+
 }
 
 export default Round;

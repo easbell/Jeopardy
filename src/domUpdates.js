@@ -104,8 +104,28 @@ const domUpdates = {
 
   displayRoundThreeWager: (category) => {
     $('.category--header').empty();
-    $('.game--board').replaceWith(`<h1>${category}</h1>`);
-  } 
+    $('.game--board').replaceWith(`
+    <div class="round--three--wager">
+      <h2>Your category for round three is: ${category}</h2>
+      <h3>Please submit your wagers.</h3>
+      <input type="text" placeholder="Wager" class="wager--player--one">
+      <input type="text" placeholder="Wager" class="wager--player--two">
+      <input type="text" placeholder="Wager" class="wager--player--three">
+      <button class="submit--wager--round--three">Submit All Wagers</button>
+    </div>`);
+  },
+
+  displayRoundThreeClue: (question) => {
+    $('.round--three--wager').replaceWith(`
+    <div class="round--three">
+      <h2>${question}</h2>
+      <h3>Please submit your answers.</h3>
+      <input type="text" placeholder="Answer" class="answer--player--one">
+      <input type="text" placeholder="Answer" class="answer--player--two">
+      <input type="text" placeholder="Answer" class="answer--player--three">
+      <button class="submit--answer--round--three">Submit All Answers</button>
+    </div>`);
+  }
   
 }
 
