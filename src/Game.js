@@ -79,11 +79,6 @@ class Game {
     this.switchPlayer(this.currentPlayer);
   }
 
-  // submitThirdRound(inputs) {
-  //   console.log(this.currentClue)
-  //   this.currentClue.roundThreeAnswer(this, inputs);
-  // }
-
   initiateRound() {
     if (this.counter === 0) {
       let round = new Round(1)
