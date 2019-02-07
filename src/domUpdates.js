@@ -55,10 +55,10 @@ const domUpdates = {
   },
 
   displayCategories: (array) => {
-    $('.category--one').text(array[0]);
-    $('.category--two').text(array[1]);
-    $('.category--three').text(array[2]);
-    $('.category--four').text(array[3]);
+    $('.category--one').text(array[0].split(/(?=[A-Z])/).join(' '));
+    $('.category--two').text(array[1].split(/(?=[A-Z])/).join(' '));
+    $('.category--three').text(array[2].split(/(?=[A-Z])/).join(' '));
+    $('.category--four').text(array[3].split(/(?=[A-Z])/).join(' '));
   },
   
   displayDailyDouble: () => {
@@ -67,7 +67,8 @@ const domUpdates = {
     <div class="popup--container">
       <h2 class="popup--question">You got a DAILY DOUBLE!</h2>
       <h5>Please enter your wager:</h5>
-      <input class="wager--input" type="text" placeholder="Place Wager Here"/>
+      <h5 class="wager--error error--hidden">Wager can not be greater than current score</h5>
+      <input class="wager--input wager" type="text" placeholder="Place Wager Here"/>
       <button class="submit--wager">Submit Wager</button>
     </div>
     `);
@@ -113,6 +114,16 @@ const domUpdates = {
       <input type="text" placeholder="Wager" class="wager--player--three">
       <button class="submit--wager--round--three">Submit All Wagers</button>
     </div>`);
+  },
+    
+  displayError: () => {
+    $('.wager--error').removeClass('error--hidden');
+    $('.wager--error').addClass('error--displayed');
+  },
+
+  displayCurrentPlayer: (currentPlayer, lastPlayer) => {
+    $(`.${currentPlayer}--container`).css('box-shadow', '10px 10px pink');
+    $(`.${lastPlayer}--container`).css('box-shadow', '');
   },
 
   displayRoundThreeClue: (question) => {
