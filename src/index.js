@@ -7,6 +7,7 @@ import $ from 'jquery';
 import './css/base.css';
 import Game from './Game.js';
 import domUpdates from './domUpdates.js';
+import Round from './Round.js';
 import Clue from './Clue.js';
 import DailyDouble from './DailyDouble.js';
 
@@ -50,12 +51,26 @@ $('.game--board').on('click', (event) => {
 
 $('body').on('click', '.submit--wager', () => {
   let playWager = $('.submit--wager').prev().val();
-  game.currentClue.wagerScore(playWager, game);
-})
+  game.currentClue.wagerScore(playWager);
+});
 
 $('body').on('click', '.submit--guess', () => {
   let playInput = $('.submit--guess').prev().val();
   game.submitGuess(playInput);
   game.counter++;
   game.initiateRound();
+});
+
+$('body').on('click', '.submit--wager--round--three', () => {
+  let playerOneWager = $('.wager--player--one').val();
+  let playerTwoWager = $('.wager--player--two').val();
+  let playerThreeWager = $('.wager--player--three').val();
+  game.currentRound.roundThreeWagers(playerOneWager, playerTwoWager, playerThreeWager )
+});
+
+$('body').on('click', '.submit--answer--round--three', () => {
+  let playerOneAnswer = $('.answer--player--one').val();
+  let playerTwoAnswer = $('.answer--player--two').val();
+  let playerThreeAnswer = $('.answer--player--three').val();
+  game.currentClue.roundThreeAnswer(game, [playerOneAnswer, playerTwoAnswer, playerThreeAnswer])
 });

@@ -18,7 +18,7 @@ describe('Clue', function() {
     };
     let game = new Game();
 
-    game.gatherPlayers('jim','bob','jill');
+    game.gatherPlayers('jim', 'bob', 'jill');
 
     let clue = new Clue(mimic.question, mimic.pointValue, mimic.answer, mimic.categoryId);
 
