@@ -4,6 +4,7 @@ import Round from './Round.js';
 import data from './data.js';
 import Clue from "./Clue";
 import DailyDouble from "./DailyDouble.js"
+import RoundThree from './RoundThree.js'
 
 class Game {
   constructor() {
@@ -102,7 +103,7 @@ class Game {
       let round = new Round(3);
       this.currentRound = round;
       round.gatherClues(this.roundThree, this);
-      this.currentClue = new Clue(round.cluesRoundThree[0].question, round.cluesRoundThree[0].pointValue, round.cluesRoundThree[0].answer, round.cluesRoundThree[0].categoryId);
+      this.currentClue = new RoundThree(0, round.cluesRoundThree[0].question, round.cluesRoundThree[0].pointValue, round.cluesRoundThree[0].answer, round.cluesRoundThree[0].categoryId);
       domUpdates.displayRound(3);
       domUpdates.displayRoundThreeWager(this.roundThree[0])
     }

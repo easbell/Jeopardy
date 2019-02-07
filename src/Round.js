@@ -52,11 +52,6 @@ class Round {
     }
   }
 
-  roundThreeWagers(a, b, c) {
-    domUpdates.displayRoundThreeClue(this.cluesRoundThree[0].question);
-  }
-
-
 }
 
 export default Round;
