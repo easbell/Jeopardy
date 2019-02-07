@@ -131,7 +131,7 @@ const domUpdates = {
   },
 
   displayCurrentPlayer: (currentPlayer, lastPlayer) => {
-    $(`.${currentPlayer}--container`).css('box-shadow', '10px 10px pink');
+    $(`.${currentPlayer}--container`).css('box-shadow', '0px 0px 51px 11px #e2d25b');
     $(`.${lastPlayer}--container`).css('box-shadow', '');
   },
 
