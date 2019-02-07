@@ -16,7 +16,7 @@ class DailyDouble extends Clue {
         domUpdates.hidePopUp();
         domUpdates.displayClue(this.question);
       }, 2000);
-    } else if (wager <= game.currentPlayer.score){
+    } else if (wager <= game.currentPlayer.score) {
       this.pointValue += parseInt(wager);
       domUpdates.hidePopUp();
       domUpdates.displayClue(this.question);

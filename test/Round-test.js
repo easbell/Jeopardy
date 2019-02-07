@@ -23,21 +23,21 @@ describe('Round', function() {
     expect(round.cluesRoundTwo[0].pointValue).to.equal(200);
   });
 
-  // it('should set daily double clues', function() {
-  //   let round = new Round();
+  it.skip('should set daily double clues', function() {
+    let round = new Round();
 
-  //   round.cluesRoundOne = [{
-  //     question: "What MTV plays 24 hours a day",
-  //     pointValue: 100,
-  //     answer: "music videos",
-  //     categoryId: 10
-  //   }];
+    round.cluesRoundOne = [{
+      question: "What MTV plays 24 hours a day",
+      pointValue: 100,
+      answer: "music videos",
+      categoryId: 10
+    }];
 
-  //   round.setDailyDouble();
-  //   expect(round.cluesRoundOne[0]).to.have.key('dailyDouble');
+    round.setDailyDouble();
+    expect(round.cluesRoundOne[0]).to.have.key('dailyDouble');
 
-  //   //test currently failing because of 'randomIndexOne'. Can't test on randomize.
-  // });
+    //test currently failing because of 'randomIndexOne'. Can't test on randomize.
+  });
 
   it('should gather clues for each round', function() {
     let game = new Game();
