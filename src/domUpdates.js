@@ -7,6 +7,10 @@ const domUpdates = {
     $('.game--container').toggleClass('game--inactive');
   },
 
+  resetGame: () => {
+    location.reload();
+  },
+
   displayPlayers: (a, b, c) => {
     $('.player--one').text(a);
     $('.player--two').text(b);
@@ -104,15 +108,19 @@ const domUpdates = {
   },
 
   displayRoundThreeWager: (category) => {
-    $('.game--container').css({"grid-template-rows": ".15fr .15fr 3.7fr .85fr"});
+    $('.game--container').css({"grid-template-rows": 
+      ".15fr .15fr 3.7fr .85fr"});
     $('.category--header').empty();
     $('.game--board').replaceWith(`
     <div class="round--three--wager">
       <h2>Your category for round three is: ${category}</h2>
       <h3>Please submit your wagers.</h3>
-      <input type="text" placeholder="Player 1 Wager" class="wager--player--one">
-      <input type="text" placeholder="Player 2 Wager" class="wager--player--two">
-      <input type="text" placeholder="Player 3 Wager" class="wager--player--three">
+      <input type="text" placeholder="Player 1 Wager" 
+      class="wager--player--one">
+      <input type="text" placeholder="Player 2 Wager" 
+      class="wager--player--two">
+      <input type="text" placeholder="Player 3 Wager" 
+      class="wager--player--three">
       <button class="submit--wager--round--three">Submit All Wagers</button>
     </div>`);
   },
@@ -128,14 +136,18 @@ const domUpdates = {
   },
 
   displayRoundThreeClue: (question) => {
-    $('.game--container').css({"grid-template-rows": ".15fr .15fr 3.7fr .85fr"});
+    $('.game--container').css({"grid-template-rows": 
+    ".15fr .15fr 3.7fr .85fr"});
     $('.round--three--wager').replaceWith(`
     <div class="round--three">
       <h2>${question}</h2>
       <h3>Please submit your answers.</h3>
-      <input type="text" placeholder="Player 1 Answer" class="answer--player--one">
-      <input type="text" placeholder="Player 2 Answer" class="answer--player--two">
-      <input type="text" placeholder="Player 3 Answer" class="answer--player--three">
+      <input type="text" placeholder="Player 1 Answer"
+       class="answer--player--one">
+      <input type="text" placeholder="Player 2 Answer" 
+      class="answer--player--two">
+      <input type="text" placeholder="Player 3 Answer" 
+      class="answer--player--three">
       <button class="submit--answer--round--three">Submit All Answers</button>
     </div>`);
   },
