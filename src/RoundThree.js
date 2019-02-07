@@ -14,19 +14,26 @@ class RoundThree extends Clue {
     this.playerOnePoints = this.pointValue + parseInt(a);
     this.playerTwoPoints = this.pointValue + parseInt(b);
     this.playerThreePoints = this.pointValue + parseInt(c);
-    domUpdates.displayRoundThreeClue(game.currentRound.cluesRoundThree[0].question);
+    domUpdates.displayRoundThreeClue(game.currentRound.cluesRoundThree[0]
+      .question);
   }
 
   roundThreeAnswer(game, inputs) {
-    if (inputs[0].toLowerCase() === game.currentRound.cluesRoundThree[0].answer.toLowerCase()) {
+    if (inputs[0].toLowerCase() === game.currentRound.cluesRoundThree[0]
+      .answer.toLowerCase()) {
       game.players[0].changeScore(this.playerOnePoints, game)
     } 
-    if (inputs[1].toLowerCase() === game.currentRound.cluesRoundThree[0].answer.toLowerCase()) {
+    if (inputs[1].toLowerCase() === game.currentRound.cluesRoundThree[0]
+      .answer.toLowerCase()) {
       game.players[1].changeScore(this.playerTwoPoints, game)
     } 
-    if (inputs[2].toLowerCase() === game.currentRound.cluesRoundThree[0].answer.toLowerCase()) {
+    if (inputs[2].toLowerCase() === game.currentRound.cluesRoundThree[0]
+      .answer.toLowerCase()) {
       game.players[2].changeScore(this.playerThreePoints, game)
     }
+    domUpdates.displayPlayerScore(game.players[0], game)
+    domUpdates.displayPlayerScore(game.players[1], game)
+    domUpdates.displayPlayerScore(game.players[2], game)
     game.determineWinner();
   }
 }

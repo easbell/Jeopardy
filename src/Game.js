@@ -60,15 +60,16 @@ class Game {
 
   instantiateClue(dataset) {
     let specificClue = this.allCluesInPlay.find(clue => {
-      return clue.categoryId === parseInt(dataset.categoryid) && clue.pointValue === parseInt(dataset.pointvalue);
+      return clue.categoryId === parseInt(dataset.categoryid) &&
+       clue.pointValue === parseInt(dataset.pointvalue);
     });
     if (specificClue.dailyDouble === true) {
-      this.currentClue = new DailyDouble(0, specificClue.question, specificClue.pointValue, specificClue.answer, specificClue.categoryId);
-      console.log(specificClue.answer)
+      this.currentClue = new DailyDouble(0, specificClue.question, 
+        specificClue.pointValue, specificClue.answer, specificClue.categoryId);
       domUpdates.displayDailyDouble()
     } else {
-      this.currentClue = new Clue(specificClue.question, specificClue.pointValue, specificClue.answer, specificClue.categoryId);
-      console.log(specificClue.answer);
+      this.currentClue = new Clue(specificClue.question, 
+        specificClue.pointValue, specificClue.answer, specificClue.categoryId);
       domUpdates.displayClue(specificClue.question);
     }
   }
@@ -103,7 +104,9 @@ class Game {
       let round = new Round(3);
       this.currentRound = round;
       round.gatherClues(this.roundThree, this);
-      this.currentClue = new RoundThree(0, round.cluesRoundThree[0].question, round.cluesRoundThree[0].pointValue, round.cluesRoundThree[0].answer, round.cluesRoundThree[0].categoryId);
+      this.currentClue = new RoundThree(0, round.cluesRoundThree[0].question, 
+        round.cluesRoundThree[0].pointValue, round.cluesRoundThree[0].answer, 
+        round.cluesRoundThree[0].categoryId);
       domUpdates.displayRound(3);
       domUpdates.displayRoundThreeWager(this.roundThree[0])
     }
