@@ -126,8 +126,8 @@ const domUpdates = {
   },
     
   displayError: () => {
-    $('.wager--error').removeClass('error--hidden');
     $('.wager--error').addClass('error--displayed');
+    $('.wager--error').removeClass('error--hidden');
   },
 
   displayCurrentPlayer: (currentPlayer, lastPlayer) => {

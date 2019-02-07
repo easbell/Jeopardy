@@ -8,7 +8,7 @@ class DailyDouble extends Clue {
   }
 
   wagerScore(wager, game) {
-    if(wager <= game.currentPlayer.score) {
+    if (wager <= game.currentPlayer.score) {
       this.pointValue += parseInt(wager);
       domUpdates.hidePopUp();
       domUpdates.displayClue(this.question);
