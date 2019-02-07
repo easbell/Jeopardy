@@ -35,6 +35,7 @@ $('.start--btn').on('click', () => {
 
 $('.game--exit').on('click', () => {
   game.quitGame();
+  domUpdates.resetGame();
   domUpdates.disableReset();
 });
 
@@ -65,13 +66,15 @@ $('body').on('click', '.submit--wager--round--three', () => {
   let playerOneWager = $('.wager--player--one').val();
   let playerTwoWager = $('.wager--player--two').val();
   let playerThreeWager = $('.wager--player--three').val();
-  game.currentRound.roundThreeWagers(playerOneWager, playerTwoWager, playerThreeWager )
+  game.currentRound.roundThreeWagers(playerOneWager, playerTwoWager, 
+    playerThreeWager )
 });
 
 $('body').on('click', '.submit--answer--round--three', () => {
   let playerOneAnswer = $('.answer--player--one').val();
   let playerTwoAnswer = $('.answer--player--two').val();
   let playerThreeAnswer = $('.answer--player--three').val();
-  game.currentClue.roundThreeAnswer(game, [playerOneAnswer, playerTwoAnswer, playerThreeAnswer])
+  game.currentClue.roundThreeAnswer(game, [playerOneAnswer, playerTwoAnswer, 
+    playerThreeAnswer])
   game.determineWinner();
 });
