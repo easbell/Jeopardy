@@ -52,7 +52,7 @@ $('body').on('click', '.submit--wager', () => {
   if (playWager === '') {
     playWager = 0
   }
-  game.currentClue.wagerScore(playWager);
+  game.currentClue.wagerScore(playWager, game);
 });
 
 $('body').on('click', '.submit--guess', () => {
