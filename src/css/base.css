@@ -191,3 +191,11 @@ button:hover {
 .round--three h1 {
   text-align: center;
 }
+
+.error--hidden {
+  visibility: hidden;
+}
+
+.error--displayed {
+  visibility: visible
+}
