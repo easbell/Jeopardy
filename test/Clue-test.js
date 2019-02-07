@@ -20,7 +20,8 @@ describe('Clue', function() {
 
     game.gatherPlayers('jim', 'bob', 'jill');
 
-    let clue = new Clue(mimic.question, mimic.pointValue, mimic.answer, mimic.categoryId);
+    let clue = new Clue(mimic.question, mimic.pointValue, mimic.answer,
+      mimic.categoryId);
 
     clue.correctAnswer(game, 'music videos');
     expect(game.currentPlayer.score).to.deep.equal(100);
