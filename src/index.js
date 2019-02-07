@@ -66,7 +66,7 @@ $('body').on('click', '.submit--wager--round--three', () => {
   let playerOneWager = $('.wager--player--one').val();
   let playerTwoWager = $('.wager--player--two').val();
   let playerThreeWager = $('.wager--player--three').val();
-  game.currentRound.roundThreeWagers(playerOneWager, playerTwoWager, 
+  game.currentClue.roundThreeWagers(game, playerOneWager, playerTwoWager, 
     playerThreeWager )
 });
 
@@ -76,5 +76,4 @@ $('body').on('click', '.submit--answer--round--three', () => {
   let playerThreeAnswer = $('.answer--player--three').val();
   game.currentClue.roundThreeAnswer(game, [playerOneAnswer, playerTwoAnswer, 
     playerThreeAnswer])
-  game.determineWinner();
 });
