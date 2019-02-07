@@ -72,6 +72,7 @@ const domUpdates = {
       <h2 class="popup--question">You got a DAILY DOUBLE!</h2>
       <h5>Please enter your wager:</h5>
       <h5 class="wager--error error--hidden">Wager can not be greater than current score</h5>
+      <h5 class="wager--error error--hidden wager--errorTwo">Sorry you can't wager on negative points</h5>
       <input class="wager--input wager" type="text" placeholder="Place Wager Here"/>
       <button class="submit--wager">Submit Wager</button>
     </div>
@@ -128,6 +129,11 @@ const domUpdates = {
   displayError: () => {
     $('.wager--error').addClass('error--displayed');
     $('.wager--error').removeClass('error--hidden');
+  },
+
+  displayErrorTwo: () => {
+    $('.wager--errorTwo').addClass('error--displayed');
+    $('.wager--errorTwo').removeClass('error--hidden');
   },
 
   displayCurrentPlayer: (currentPlayer, lastPlayer) => {
