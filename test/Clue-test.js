@@ -6,7 +6,7 @@ import Clue from '../src/Clue.js'
 import spies from 'chai-spies';
 chai.use(spies);
 
-chai.spy.on(domUpdates, ['hidePopUp'], () => true);
+chai.spy.on(domUpdates, ['hidePopUp', 'displayCurrentPlayer'], () => true);
 
 describe('Clue', function() {
   it('should check answer', function() {
